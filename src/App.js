@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop';
 import { Navbar } from './components/Components'
-import { Home, Overzicht, Create } from './pages/Pages'
+import { Home, Overzicht, Create, Cocktail } from './pages/Pages'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/overzicht" element={<Overzicht/>}/>
+          <Route path="/cocktail/:id" element={<Cocktail/>}/>
           <Route path="/create" element={<Create/>}/>
         </Routes>
       </div>
