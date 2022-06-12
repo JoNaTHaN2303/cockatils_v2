@@ -21,7 +21,3 @@ function App() {
 }
 
 export default App;
-
-//[#373A36] - dark gray 1
-//[#E6E2DD] - white gray 2
-//[#D48166] - orange 3

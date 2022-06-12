@@ -15,19 +15,16 @@ export default function Overzicht(){
 
   useEffect(() => {
     if(data){
-        setCockatil(data.filter(item => item.name === id))
+      setCockatil(data.filter(item => item.name === id))
     }
   }, [data, setCockatil, id]);
 
-  if(!cocktail){
-    console.log('loading')
-    return(<div className='flex justify-center items-center text-gray-200'>Loading...</div>)
-}
+  if(!cocktail)return(<div className='flex justify-center items-center text-gray-200'>Loading...</div>)
 
   return(
-    <div id='overzicht' className="min-h-screen flex flex-col justify-start items-start font-semibold pt-32 px-10 md:px-16 lg:px-20 pb-20">
+    <div id='overzicht' className="min-h-screen w-full flex flex-col justify-start items-start font-semibold pt-32 px-10 md:px-16 lg:px-20 pb-20">
         {cocktail && (
-        <>
+        <div className='w-full'>
             <div className='w-full flex flex-col md:flex-row justify-center items-center md:items-start xl:px-10'>
                 <div className='w-full sm:w-4/5 md:w-2/5'>
                     <img src={cocktail[0].image.asset.url} alt={cocktail[0].name} className='rounded-md'/>
@@ -42,14 +39,14 @@ export default function Overzicht(){
                 </div>
             </div>
             <div className='w-full flex flex-col md:flex-row justify-center items-center md:items-start xl:px-10'>
-                <div className='w-full sm:w-4/5 md:w-auto mt-5'>
-                    <p className='text-left text-md md:text-lg xl:text-xl mb-1 border-b-2 border-orange-700'>Ingrediënts: </p>
-                    <p className='text-left text-sm md:text-base xl:text-lg mb-5'>{cocktail[0].ingredients}</p>
-                    <p className='text-left text-md md:text-lg xl:text-xl mb-1 border-b-2 border-orange-700'>Step-by-step plan: </p>
-                    <p className='text-left text-sm md:text-base xl:text-lg'>{cocktail[0].plan}</p>
+                <div className='sm:w-4/5 md:w-full mt-5'>
+                    <p className='w-full text-left text-md md:text-lg xl:text-xl mb-1 border-b-2 border-orange-700'>Ingrediënts: </p>
+                    <p className='w-full text-left text-sm md:text-base xl:text-lg mb-5'>{cocktail[0].ingredients}</p>
+                    <p className='w-full text-left text-md md:text-lg xl:text-xl mb-1 border-b-2 border-orange-700'>Step-by-step plan: </p>
+                    <p className='w-full text-left text-sm md:text-base xl:text-lg'>{cocktail[0].plan}</p>
                 </div>
             </div>
-        </>
+        </div>
         )}
     </div>
   )
