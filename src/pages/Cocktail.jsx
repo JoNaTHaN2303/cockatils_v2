@@ -18,7 +18,7 @@ export default function Overzicht(){
 
   return(
     <div id='overzicht' className="min-h-screen flex flex-col justify-start items-start font-semibold pt-32 px-10 md:px-16 lg:px-20 pb-20">
-        {data && data.map((cocktail) => (
+        {cocktail && (
         <>
             <div className='w-full flex flex-col md:flex-row justify-center items-center md:items-start xl:px-10'>
                 <div className='w-full sm:w-4/5 md:w-2/5'>
@@ -42,7 +42,7 @@ export default function Overzicht(){
                 </div>
             </div>
         </>
-        ))}
+        )}
     </div>
   )
 }
