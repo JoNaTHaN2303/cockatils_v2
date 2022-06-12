@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import SanityClient from '../client'
 import { useParams } from 'react-router-dom';
-import * as images from '../images/images'
 
 export default function Overzicht(){
   const [data, setData] = useState(null);
@@ -15,7 +14,7 @@ export default function Overzicht(){
     if(data){
         setCockatil(data.filter(item => item.name === id))
     }
-  }, []);
+  }, [data, id]);
 
   return(
     <div id='overzicht' className="min-h-screen flex flex-col justify-start items-start font-semibold pt-32 px-10 md:px-16 lg:px-20 pb-20">
